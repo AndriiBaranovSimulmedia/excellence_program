@@ -1,3 +1,9 @@
+import logging
+
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
+
+
 class MenuItem:
     """
     Base class for menu items.
@@ -32,7 +38,7 @@ class Drink(MenuItem):
 
     def prepare(self) -> None:
         """Prepare the drink."""
-        print(f"Pouring the {self.temperature} drink: {self.name}")
+        logger.info(f"Pouring the {self.temperature} drink: {self.name}")
 
 
 class Food(MenuItem):
@@ -48,4 +54,4 @@ class Food(MenuItem):
 
     def prepare(self) -> None:
         """Prepare the food."""
-        print(f"Cooking {'vegetarian' if self.is_vegetarian else 'non-vegetarian'} dish: {self.name}")
+        logger.info(f"Cooking {'vegetarian' if self.is_vegetarian else 'non-vegetarian'} dish: {self.name}")
