@@ -10,7 +10,7 @@ def run_simulation():
 
     # Customer places an order
     customer = Customer("Andrusha")
-    order = customer.create_order([latte, pizza, salad])
+    order = customer.create_order([latte, pizza, salad, iced_tea])
 
     # Process the order
     order.process_order()

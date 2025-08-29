@@ -1,5 +1,10 @@
 from typing import List
-from .menu_items import MenuItem
+from menu_items import MenuItem
+import logging
+
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
+
 
 class Order:
     """
@@ -21,7 +26,7 @@ class Order:
 
     def process_order(self) -> None:
         """Prepare all items in the order."""
-        print("\n--- Processing Order ---")
+        logger.info("\n--- Processing Order ---")
         for item in self.items:
             item.prepare()
-        print(f"Total price: UAH {self.total_price():.2f}")
+        logger.info(f"Total price: UAH {self.total_price():.2f}")

@@ -1,6 +1,11 @@
 from typing import List
-from .menu_items import MenuItem
-from .order import Order
+from menu_items import MenuItem
+from order import Order
+import logging
+
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
+
 
 class Customer:
     """
@@ -18,5 +23,5 @@ class Customer:
         for item in menu_items:
             order.add_item(item)
 
-        print(f'Order created for {self.name}')
+        logger.info(f'Order created for {self.name}')
         return order
